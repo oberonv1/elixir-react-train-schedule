@@ -19,7 +19,7 @@ defmodule Mbta.Mixfile do
   def application do
     [mod: {Mbta, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :httpotion]]
+                    :phoenix_ecto, :postgrex, :httpotion, :std_json_io]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,9 @@ defmodule Mbta.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:httpotion, "~> 3.0.2"}]
+     {:httpotion, "~> 3.0.2"},
+     {:poison, "~> 1.5", override: true}, #required to resolve conficts with :std_json_io
+     {:std_json_io, "~> 0.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
