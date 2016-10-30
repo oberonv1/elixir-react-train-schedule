@@ -12,6 +12,7 @@ defmodule Mbta do
       supervisor(Mbta.Repo, []),
       # Start the endpoint when the application starts
       supervisor(Mbta.Endpoint, []),
+      supervisor(Mbta.ReactIO, []),
       # Start your own worker by calling: Mbta.Worker.start_link(arg1, arg2, arg3)
       worker(Mbta.Visitors, [])
       # worker(Mbta.Worker, [arg1, arg2, arg3]),
