@@ -1,4 +1,13 @@
-# Mbta
+# Mbta Train Schedule
+
+[Live Demo](https://elixir-react-train-schedule.herokuapp.com/)
+
+To run the application be sure to have the following:
+  * Elixir v1.2 or above
+  * Phoenix v1.2 or above
+  * Erlang v19 or above
+  * Node v6 or above
+  * NPM v3 or above
 
 To start your Phoenix app:
 
