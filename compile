@@ -1,3 +1,4 @@
 npm install
+mkdir priv/static
 npm build
 mix phoenix.digest
