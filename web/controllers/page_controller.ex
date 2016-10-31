@@ -3,14 +3,19 @@ defmodule Mbta.PageController do
   require HTTPotion
 
   def index(conn, _params) do
-    response = HTTPotion.get "http://developer.mbta.com/lib/gtrtfs/Departures.csv"
+    schedule =
+        HTTPotion.get("http://developer.mbta.com/lib/gtrtfs/Departures.csv")
+        |> Map.fetch!(:body)
+        |> String.split("\n", trim: true)
     visitors = Mbta.Visitors.state()
-    initial_state = %{"visitors" => visitors}
+    initial_state = %{
+        "visitors" => visitors,
+        "schedule" => schedule
+    }
     props = %{
       "location" => conn.request_path,
       "initial_state" => initial_state
     }
-    IO.inspect response.body
     result = Mbta.ReactIO.json_call!(%{
       component: "./priv/static/server/js/mbta.js",
       props: props,

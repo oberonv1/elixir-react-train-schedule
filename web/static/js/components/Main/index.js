@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 
 class Main extends React.Component {
   render() {
-    const { visitors } = this.props;
+    const { visitors, schedule } = this.props;
+    console.log(visitors, schedule);
     return <main role="main">
       <div className="jumbotron">
         <h2>Welcome to Phoenix!</h2>

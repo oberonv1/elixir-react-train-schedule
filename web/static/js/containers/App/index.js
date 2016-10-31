@@ -7,12 +7,10 @@ export default class App extends React.Component {
     render() {
         return <div className="container">
             <header className="header">
-                <nav role="navigation">
-                    <ul className="nav nav-pills pull-right">
-                        <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-                    </ul>
-                </nav>
-                <span className="logo"></span>
+                <div className="logo-container">
+                    <span className="logo"></span>
+                    <h1>MBTA</h1>
+                </div>
             </header>
             {this.props.children}
         </div>;
