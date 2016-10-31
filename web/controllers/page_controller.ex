@@ -4,7 +4,7 @@ defmodule Mbta.PageController do
 
   def index(conn, _params) do
     schedule =
-        HTTPotion.get("http://developer.mbta.com/lib/gtrtfs/Departures.csv")
+        HTTPotion.get("http://developer.mbta.com/lib/gtrtfs/Departures.csv", timeout: 20000)
         |> Map.fetch!(:body)
         |> String.split("\n", trim: true)
     visitors = Mbta.Visitors.state()
