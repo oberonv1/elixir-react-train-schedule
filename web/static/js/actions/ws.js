@@ -23,6 +23,20 @@ const setupHandlers = (name, channel, dispatch) => {
         });
       });
       break;
+    case "schedule":
+      channel.on("init", (msg) => {
+        dispatch({
+          type: "SCHEDULE_INIT",
+          schedule: msg.schedule
+        });
+      });
+      channel.on("updated", (msg) => {
+        dispatch({
+          type: "SCHEDULE_UPDATED",
+          schedule: msg.schedule
+        });
+      });
+      break;
     default:
       break;
   }

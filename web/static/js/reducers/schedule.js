@@ -6,11 +6,11 @@ const initialState = [];
 export default function reducer(state = initialState, action = {}) {
     switch (action.type) {
         case "SCHEDULE_INIT":
-            return {
-                total: action.total,
-                online: action.online,
-                max_online: action.max_online,
-            };
+            console.log('init', action.schedule);
+            return action.schedule;
+        case "SCHEDULE_UPDATED":
+            console.log('updated', action.schedule);
+            return action.schedule;
         default:
             return state;
     }

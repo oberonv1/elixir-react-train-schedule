@@ -14,6 +14,7 @@ export default function configureStore(initialState) {
     if (typeof window !== "undefined") {
         store.dispatch(WSActions.socket_connect());
         store.dispatch(WSActions.channel_join("visitors"));
+        store.dispatch(WSActions.channel_join("schedule"));
     }
     return store;
 }

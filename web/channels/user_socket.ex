@@ -4,6 +4,7 @@ defmodule Mbta.UserSocket do
   ## Channels
   # channel "room:*", Mbta.RoomChannel
   channel "visitors", Mbta.VisitorsChannel
+  channel "schedule", Mbta.ScheduleChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
