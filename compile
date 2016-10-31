@@ -1,4 +1,4 @@
 npm install
 mkdir priv/static
-npm build
+npm run build
 mix phoenix.digest
